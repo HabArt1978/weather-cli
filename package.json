@@ -1,0 +1,30 @@
+{
+  "name": "weather-cli",
+  "version": "1.0.0",
+  "private": "false",
+  "description": "CLI for getthing weather",
+  "main": "index.js",
+  "bin": "./index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "cli",
+    "weather"
+  ],
+  "author": "HabArt1978",
+  "license": "ISC",
+  "homepage": "https://github.com/HabArt1978",
+  "repository": {
+    "type": "git",
+    "directory": "https://github.com/HabArt1978"
+  },
+  "bugs": {
+    "email": "habart1978@gmail.com",
+    "url": "https://github.com/HabArt1978"
+  },
+  "dependencies": {
+    "axios": "^1.4.0"
+  }
+}
