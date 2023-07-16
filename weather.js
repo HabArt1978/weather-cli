@@ -1,23 +1,20 @@
 #!/usr/bin/evt node
 import { getArgs } from "./helpers/args.js"
+import { printHelp } from "./services/log.service.js"
 
 const initCLI = () => {
   const args = getArgs(process.argv)
-  console.log(args)
-  switch (args) {
-    case args.h:
-      // вывести helpers
-      break
-    case args.s:
-      // сохранить город
-      break
-    case args.t:
-      // сохранить токен
-      break
 
-    default:
-    // вывести погоду
+  if (args.h) {
+    printHelp()
   }
+  if (args.s) {
+    // сохранить город
+  }
+  if (args.t) {
+    // сохранить токен
+  }
+  // вывести погоду
 }
 
 initCLI()
