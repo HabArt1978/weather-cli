@@ -17,8 +17,26 @@ const saveToken = async token => {
   }
 }
 
+const getForcast = async () => {
+  try {
+    // пока город будем генерить во временной переменной окружения CITY
+    const weather = await getWeather(process.env.CITY)
+    console.log(weather)
+  } catch (error) {
+    if (error?.response?.status === 404) {
+      printError("Неверно указан город")
+    } else if (error?.response?.status === 401) {
+      printError("Неверно указан token")
+    } else {
+      printError(error.message)
+    }
+  }
+}
+
 const initCLI = () => {
   const args = getArgs(process.argv)
+
+  console.log(process.env) // вывод всех переменных окружения
 
   if (args.h) {
     printHelp()
@@ -29,7 +47,7 @@ const initCLI = () => {
   if (args.t) {
     return saveToken(args.t)
   }
-  getWeather("москва")
+  getForcast()
   // вывести погоду
 }
 
